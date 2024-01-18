@@ -81,3 +81,56 @@
 - Arrays
     - string [] arr1 = {”Ask”,”tell”}
 
+- C# Methods
+    - name the method with an uppercase letter like MyMethod()
+    - why methods? define the code once and use it many times
+
+    - C# Method Parameters
+    - Information can be passed to methods as parameter. Parameters act as variables inside the method.
+    - multiple parameters can be passed to method separated by commas. when calling such methods the same number of arguments must be passed in same order
+
+  static void MyMethod(string fname) {
+  Console.WriteLine(fname + " Refsnes"); }
+  static void Main(string[] args){
+  MyMethod("Liam");
+  MyMethod("Jenny");
+  MyMethod("Anja");}
+
+When a **parameter** is passed to the method, it is called an **argument**. So, from the example above: `fname` is a **parameter**, while `Liam`, `Jenny` and `Anja` are **arguments**.
+
+- Default Parameter : If we call the method without an argument, it uses the default value which is assigned to it with **=** operator
+
+  static void MyMethod(string country = "Norway"){
+  Console.WriteLine(country); }
+  static void Main(string[] args){
+  MyMethod("Sweden");
+  MyMethod("India");
+  MyMethod();
+  MyMethod("USA"); }
+//A parameter with a default value, is often known as an "optional parameter". From the example above, country is an optional parameter and "Norway" is the default value.
+
+Optional parameters must be declared after all the required parameters. To pass an argument to only any one of optional parameters use named arguments in key: value syntax.
+  public void YourMethod(int reqA, string reqB, int optA = 10, string optB = "Default", bool optC = true)
+{
+// Method implementation goes here
+}
+// Calling the method and providing a value only for optC
+YourMethod(5, "Hello", optC: false);
+for named arguments, maintaining order of arguments is not required
+
+- C# Method Overloading    
+    With **method overloading**, multiple methods can have the same name with different parameters:    
+    best real life example can be: when buying something, customer can pay through any mode of transaction like liquid cash, UPI, credit / debit card.
+
+public void AcceptPayment(int liquidCash){
+// Implementation for payment by liquid cash
+}
+public void AcceptPayment(int UPI){
+// Implementation for payment by UPI
+}
+public void AcceptPayment(int CreditCard){
+// Implementation for payment by Credit Card
+}
+public void AcceptPayment(int DebitCard){
+// Implementation for payment by Debit Card
+}
